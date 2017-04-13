@@ -51,12 +51,12 @@ public class ArrList<T> implements ArrListInterface<T> {
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        numOfItems =-1;
     }
 
     @Override
     public int numOfItem() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return numOfItems+1;
     }
 
     @Override
