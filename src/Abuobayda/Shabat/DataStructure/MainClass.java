@@ -24,5 +24,11 @@ public class MainClass {
         System.out.println("==========Adding in a particular postion===");
         myList.add(55, 0);
         myList.display();
+        
+        System.out.println("=======Removing an item========");
+        myList.remove(1);
+        myList.display();
+        
+        
     }
 }

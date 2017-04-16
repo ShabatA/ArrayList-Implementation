@@ -71,7 +71,16 @@ public class ArrList<T> implements ArrListInterface<T> {
 
     @Override
     public T remove(int position) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        T result = null;
+        if ((position >= 0) && (position <= numOfItems)) {
+            assert !isEmpty();
+            result = array[position];
+            if (position < numOfItems){ 
+                removeGap(position);
+            }
+            numOfItems--;
+        }
+        return result;
     }
 
     @Override
@@ -109,6 +118,16 @@ public class ArrList<T> implements ArrListInterface<T> {
     @Override
     public boolean contains(int newEntry) {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    private void removeGap(int position) {
+        assert(position >= 0) && (position < numOfItems);
+        int removedIndex = position;
+        int lastIndex = numOfItems;
+        for (int index = removedIndex; index < lastIndex; index++)
+        { 
+            array[index] = array[index + 1]; 
+        }
     }
     
 }
