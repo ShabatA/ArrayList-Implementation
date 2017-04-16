@@ -29,6 +29,8 @@ public class MainClass {
         myList.remove(1);
         myList.display();
         
-        
+        System.out.println("=========getEntry===========");
+        int value = myList.getEntry(3);
+        System.out.println("The value is: "+ value);
     }
 }

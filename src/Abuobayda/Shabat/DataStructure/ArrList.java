@@ -112,7 +112,13 @@ public class ArrList<T> implements ArrListInterface<T> {
 
     @Override
     public T getEntry(int position) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (position <=numOfItems){
+            return array[position];
+        }
+        else 
+        {
+            return null;
+        }
     }
 
     @Override
