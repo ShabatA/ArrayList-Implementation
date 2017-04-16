@@ -21,17 +21,52 @@ public class ArrList<T> implements ArrListInterface<T> {
     
     ArrList(int size){
         array = (T[]) new Object[size];
+        //we start from -1 because java array start from position 0 not 1
         numOfItems=-1;
     }
 
     @Override
     public void add(T item) {
-        
+     if (!isFull()){
+        numOfItems++;
+        array[numOfItems] = item;
+     }
+     else
+     {
+         //if the array is full we resize the array
+         T[] array2 = (T[])new Object[array.length*2];
+         for(int i=0;i<=numOfItems;i++)
+         {
+             array2[i]=array[i];
+         }
+         array = array2;
+         add(item);
+     }
     }
 
     @Override
     public void add(T item, int position) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if (!isFull()){
+            for (int i = numOfItems; i>=position; i--)
+            {
+                array[i+1] = array[i];
+            }
+            array[position] = item;
+            numOfItems++;
+        }
+        else
+        {
+            //if the array is full we resize the array
+            T[] array2 = (T[])new Object[array.length*2];
+            for(int j=0;j<=numOfItems;j++)
+            {
+                array2[j]=array[j];
+            }
+            array = array2;
+            add(item, position);
+     }
+        
+
     }
 
     @Override
@@ -61,7 +96,9 @@ public class ArrList<T> implements ArrListInterface<T> {
 
     @Override
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (int i=0; i<=numOfItems;i++){
+            System.out.println(array[i]);
+        }
     }
 
     @Override
