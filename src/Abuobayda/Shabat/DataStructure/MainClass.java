@@ -15,7 +15,7 @@ public class MainClass {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrListInterface<Integer> myList = new ArrList<Integer>(3);
+        ArrListInterface<Integer> myList = new ArrList<>(3);
         myList.add(10);
         myList.add(20);
         myList.add(50);
@@ -32,5 +32,12 @@ public class MainClass {
         System.out.println("=========getEntry===========");
         int value = myList.getEntry(3);
         System.out.println("The value is: "+ value);
+        
+        System.out.println("=========contain/search========");
+        boolean result;
+        result = myList.contains(30);
+        System.out.println("Does 30 exist in the list? " + result);
+        System.out.println("Does 50 exist in the list? "+ myList.contains(50));
+        
     }
 }

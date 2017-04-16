@@ -122,8 +122,16 @@ public class ArrList<T> implements ArrListInterface<T> {
     }
 
     @Override
-    public boolean contains(int newEntry) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean contains(T target) {
+        boolean found = false;
+        for(int i=0; i<=numOfItems;i++)
+        {
+            if (array[i].equals(target))
+            {
+                found = true;
+            }
+        }
+        return found;
     }
 
     private void removeGap(int position) {

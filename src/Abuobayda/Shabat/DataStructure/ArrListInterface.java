@@ -30,7 +30,7 @@ public interface ArrListInterface <T>{
     //return the item in a particular position
     public T getEntry(int position);
     //return true if the value exist in the list
-    public boolean contains(int newEntry);
+    public boolean contains(T target);
 
     
 }
